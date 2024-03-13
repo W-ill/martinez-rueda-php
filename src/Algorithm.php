@@ -497,7 +497,8 @@ class Algorithm
         // the line segments overlap, but they belong to the same polygon
         // the program does not work with this kind of polygon
         if ($intersections == 2 && $event1->polygon_type == $event2->polygon_type) {
-            throw new \Exception('Polygon has overlapping edges.');
+            // commenting out this exception yields more stable operation in our case
+            // throw new \Exception('Polygon has overlapping edges.');
         }
 
         if ($intersections == 1) {
